@@ -3,166 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madarsa Construction Donation</title>
+<title>Madarsa Donation</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-body{
-background:#f5f5f5;
-color:#333;
-}
+body{background:#f5f5f5;color:#333;}
 
 /* HERO */
-
 .hero{
 height:60vh;
-background: url("./assets/2.png") center/cover no-repeat;
-position: relative;
+background:url("./assets/2.png") center/cover no-repeat;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
-padding:20px;
+color:#fff;
 }
 
 .hero::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background: rgba(0,0,0,0.6);
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
 }
 
-.hero-content{
-position: relative;
-z-index: 2;
-}
+.hero-content{position:relative;z-index:2;}
 
-.hero h1{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.tagline{
-font-size:18px;
-margin:5px 0;
-}
-
-.urdu{
-direction:rtl;
-font-size:20px;
-}
+.hero h1{font-size:30px;margin-bottom:10px;}
+.tagline{font-size:16px;}
+.urdu{direction:rtl;font-size:18px;}
 
 /* CONTAINER */
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:30px 20px;
-}
+.container{max-width:900px;margin:auto;padding:20px;}
 
 /* GALLERY */
-
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
 margin-top:20px;
 }
 
-.gallery img{
+.gallery a img{
 width:100%;
 border:1px solid #ddd;
 }
 
 /* CARD */
-
 .card{
-background:white;
-padding:20px;
-margin-top:20px;
+background:#fff;
+padding:15px;
+margin-top:15px;
 border:1px solid #ddd;
-}
-
-.card p{
-margin:10px 0;
+font-size:14px;
 }
 
 /* QUOTE */
-
 .quote{
-background:#eee;
-padding:20px;
-margin-top:20px;
-text-align:center;
+background:#fff;
+padding:15px;
+margin-top:15px;
 border-left:4px solid #000;
+text-align:center;
 }
 
-.quote p{
-margin:8px 0;
+.quote p{margin:5px 0;}
+
+/* PROGRESS */
+.progress-box{
+background:#fff;
+padding:15px;
+margin-top:15px;
+border:1px solid #ddd;
+text-align:center;
 }
 
-/* DONATION */
+.progress{
+width:100%;
+background:#ddd;
+height:20px;
+margin-top:10px;
+}
 
-.donation{
-background:white;
-padding:25px;
-margin-top:20px;
+.progress-bar{
+height:100%;
+width:0%;
+background:#444;
+}
+
+/* QR */
+.qr{
+background:#fff;
+padding:15px;
+margin-top:15px;
 text-align:center;
 border:1px solid #ddd;
 }
 
-.donation h2{
-margin-bottom:10px;
-}
-
-.info{
-margin:8px 0;
-font-size:16px;
-}
+.qr img{width:180px;border:1px solid #ddd;}
 
 .btn{
 margin-top:10px;
-padding:10px 20px;
-cursor:pointer;
+padding:10px;
 border:1px solid #000;
-background:white;
-}
-
-.btn:hover{
-background:#ddd;
+background:#fff;
+cursor:pointer;
 }
 
 .whatsapp{
-display:inline-block;
+display:block;
 margin-top:10px;
-padding:10px 20px;
-text-decoration:none;
+padding:10px;
 border:1px solid #000;
+text-decoration:none;
 color:#000;
+text-align:center;
 }
-
-.whatsapp:hover{
-background:#ddd;
-}
-
-/* FOOTER */
 
 footer{
-margin-top:30px;
+margin-top:20px;
 text-align:center;
-padding:20px;
+padding:15px;
 background:#ddd;
+font-size:14px;
 }
 
 </style>
@@ -171,94 +137,133 @@ background:#ddd;
 <body>
 
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
 <h1>Support Madarsa Construction</h1>
-
-<div class="tagline">Help Build a Better Future for Children</div>
-<div class="tagline">मदरसा निर्माण में सहयोग करें</div>
-<div class="urdu">مدرسہ کی تعمیر میں حصہ لیں — صدقہ جاریہ کمائیں</div>
+<div class="tagline">Help Build Future Through Education</div>
+<div class="urdu">مدرسہ کی تعمیر میں حصہ لیں</div>
 </div>
-
 </section>
 
 <div class="container">
 
 <!-- GALLERY -->
-
 <div class="gallery">
-<img src="./assets/1.jpeg">
-<img src="./assets/2.png">
-<img src="./assets/3.png">
-<img src="./assets/1.jpeg">
+<a href="./assets/1.jpeg" target="_blank"><img src="./assets/1.jpeg"></a>
+<a href="./assets/2.png" target="_blank"><img src="./assets/2.png"></a>
+<a href="./assets/3.png" target="_blank"><img src="./assets/3.png"></a>
 </div>
 
 <!-- MESSAGE -->
-
 <div class="card">
-
-<p><b>English:</b> Your donation will help complete the Madarsa building where children will receive Islamic education.</p>
-
-<p><b>Hindi:</b> आपका सहयोग मदरसे की इमारत को पूरा करने में मदद करेगा जहाँ बच्चों को दीन की शिक्षा मिलेगी।</p>
-
-<p class="urdu"><b>اردو:</b> آپ کی مدد سے اس مدرسہ کی تعمیر مکمل ہوگی جہاں بچوں کو دینی تعلیم ملے گی۔</p>
-
+<p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge and values.</p>
+<p><b>Hindi:</b> आपका सहयोग मदरसे के निर्माण में मदद करता है जहाँ बच्चों को दीन की शिक्षा मिलती है।</p>
+<p class="urdu"><b>اردو:</b> آپ کی مدد سے مدرسہ تعمیر ہوگا جہاں بچوں کو دینی تعلیم دی جائے گی۔</p>
 </div>
 
 <!-- QUOTE -->
-
 <div class="quote">
 
-<p><b>English:</b> The best among you are those who learn knowledge and teach it.</p>
+<p><b>Arabic:</b></p>
+<p>طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
 
-<p><b>Hindi:</b> तुममें सबसे बेहतर वह है जो ज्ञान सीखता है और सिखाता है।</p>
+<p><b>English:</b> Seeking knowledge is an obligation upon every Muslim.</p>
 
-<p class="urdu">تم میں سب سے بہتر وہ ہے جو علم سیکھے اور سکھائے۔</p>
+<p><b>Hindi:</b> इल्म हासिल करना हर मुसलमान पर फर्ज़ है।</p>
+
+<p class="urdu"><b>Urdu:</b> علم حاصل کرنا ہر مسلمان پر فرض ہے۔</p>
+
+<hr style="margin:10px 0;">
+
+<p><b>Arabic:</b></p>
+<p>مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ</p>
+
+<p><b>English:</b> Whoever follows a path to seek knowledge, Allah will make the path to Jannah easy.</p>
+
+<p><b>Hindi:</b> जो ज्ञान की राह पर चलता है, अल्लाह उसके लिए जन्नत का रास्ता आसान कर देता है।</p>
+
+<p class="urdu"><b>Urdu:</b> جو علم کے راستے پر چلتا ہے، اللہ اس کے لیے جنت کا راستہ آسان کر دیتا ہے۔</p>
 
 </div>
 
-<!-- DONATION -->
+<!-- PROGRESS -->
+<div class="progress-box">
+<h2>Donation Progress</h2>
 
-<div class="donation">
+<p>Collected: ₹ <span id="collected">15250</span></p>
+<p>Target: ₹ <span id="target">200000</span></p>
 
-<h2>Donate for Madarsa</h2>
+<div class="progress">
+<div class="progress-bar" id="bar"></div>
+</div>
 
-<div class="info">📍 Bhantha Supaul Bazar, Biraul, Darbhanga, Bihar – 847203</div>
+<p id="percent"></p>
+</div>
 
-<div class="info">📞 Contact: <b>6299458508</b></div>
+<!-- QR + ADDRESS -->
+<div class="qr">
 
-<div class="info">💳 UPI: <b id="upi">6299458508</b></div>
+<h3>Scan & Donate</h3>
+
+<img src="./assets/qr.png">
+
+<p><b>UPI:</b> <span id="upi">6299458508</span></p>
 
 <button class="btn" onclick="copyUPI()">Copy UPI</button>
 
-<br>
-
-<a class="whatsapp" href="https://wa.me/916299458508">Donate via WhatsApp</a>
-
 <p id="msg"></p>
 
-</div>
+<hr style="margin:15px 0;">
+
+<p><b>📍 Address:</b></p>
+
+<p>
+Bhantha, Supaul Bazar,<br>
+Biraul, Darbhanga,<br>
+Bihar – 847203
+</p>
 
 </div>
 
-<!-- FOOTER -->
+<!-- SHARE -->
+<a class="whatsapp" id="shareBtn" target="_blank">
+📢 Share & Earn Reward
+</a>
+
+</div>
 
 <footer>
-
-<p>May Allah reward you for your support</p>
+<p>May Allah reward you 🤲</p>
 <p>अल्लाह आपको इसका बेहतर बदला दे</p>
-<p class="urdu">اللہ تعالیٰ آپ کو بہترین اجر عطا فرمائے</p>
-
+<p class="urdu">اللہ آپ کو بہترین اجر عطا فرمائے</p>
 </footer>
 
 <script>
+
+// COPY UPI
 function copyUPI(){
 let upi=document.getElementById("upi").innerText;
 navigator.clipboard.writeText(upi);
-document.getElementById("msg").innerHTML="UPI copied successfully ✔";
+document.getElementById("msg").innerHTML="Copied ✔";
 }
+
+// PROGRESS
+let collected = 15250;
+let target = 200000;
+
+let percent = Math.floor((collected/target)*100);
+
+document.getElementById("bar").style.width = percent + "%";
+document.getElementById("percent").innerHTML = percent + "% Completed";
+
+// SHARE
+let msg = encodeURIComponent(
+"📢 Madarsa Donation\n\nSupport Islamic Education 🤲\n\n" + window.location.href
+);
+
+document.getElementById("shareBtn").href =
+"https://wa.me/?text=" + msg;
+
 </script>
 
 </body>
