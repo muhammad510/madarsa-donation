@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madarsa Construction Donation</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#333;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+background: url("./assets/2.png") center/cover no-repeat;
+position: relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position: relative;
+z-index: 2;
+}
+
+.hero h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.tagline{
+font-size:18px;
+margin:5px 0;
+}
+
+.urdu{
+direction:rtl;
+font-size:20px;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border:1px solid #ddd;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:20px;
+margin-top:20px;
+border:1px solid #ddd;
+}
+
+.card p{
+margin:10px 0;
+}
+
+/* QUOTE */
+
+.quote{
+background:#eee;
+padding:20px;
+margin-top:20px;
+text-align:center;
+border-left:4px solid #000;
+}
+
+.quote p{
+margin:8px 0;
+}
+
+/* DONATION */
+
+.donation{
+background:white;
+padding:25px;
+margin-top:20px;
+text-align:center;
+border:1px solid #ddd;
+}
+
+.donation h2{
+margin-bottom:10px;
+}
+
+.info{
+margin:8px 0;
+font-size:16px;
+}
+
+.btn{
+margin-top:10px;
+padding:10px 20px;
+cursor:pointer;
+border:1px solid #000;
+background:white;
+}
+
+.btn:hover{
+background:#ddd;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+text-decoration:none;
+border:1px solid #000;
+color:#000;
+}
+
+.whatsapp:hover{
+background:#ddd;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:30px;
+text-align:center;
+padding:20px;
+background:#ddd;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+<h1>Support Madarsa Construction</h1>
+
+<div class="tagline">Help Build a Better Future for Children</div>
+<div class="tagline">मदरसा निर्माण में सहयोग करें</div>
+<div class="urdu">مدرسہ کی تعمیر میں حصہ لیں — صدقہ جاریہ کمائیں</div>
+</div>
+
+</section>
+
+<div class="container">
+
+<!-- GALLERY -->
+
+<div class="gallery">
+<img src="./assets/1.jpeg">
+<img src="./assets/2.png">
+<img src="./assets/3.png">
+<img src="./assets/1.jpeg">
+</div>
+
+<!-- MESSAGE -->
+
+<div class="card">
+
+<p><b>English:</b> Your donation will help complete the Madarsa building where children will receive Islamic education.</p>
+
+<p><b>Hindi:</b> आपका सहयोग मदरसे की इमारत को पूरा करने में मदद करेगा जहाँ बच्चों को दीन की शिक्षा मिलेगी।</p>
+
+<p class="urdu"><b>اردو:</b> آپ کی مدد سے اس مدرسہ کی تعمیر مکمل ہوگی جہاں بچوں کو دینی تعلیم ملے گی۔</p>
+
+</div>
+
+<!-- QUOTE -->
+
+<div class="quote">
+
+<p><b>English:</b> The best among you are those who learn knowledge and teach it.</p>
+
+<p><b>Hindi:</b> तुममें सबसे बेहतर वह है जो ज्ञान सीखता है और सिखाता है।</p>
+
+<p class="urdu">تم میں سب سے بہتر وہ ہے جو علم سیکھے اور سکھائے۔</p>
+
+</div>
+
+<!-- DONATION -->
+
+<div class="donation">
+
+<h2>Donate for Madarsa</h2>
+
+<div class="info">📍 Bhantha Supaul Bazar, Biraul, Darbhanga, Bihar – 847203</div>
+
+<div class="info">📞 Contact: <b>6299458508</b></div>
+
+<div class="info">💳 UPI: <b id="upi">6299458508</b></div>
+
+<button class="btn" onclick="copyUPI()">Copy UPI</button>
+
+<br>
+
+<a class="whatsapp" href="https://wa.me/916299458508">Donate via WhatsApp</a>
+
+<p id="msg"></p>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>May Allah reward you for your support</p>
+<p>अल्लाह आपको इसका बेहतर बदला दे</p>
+<p class="urdu">اللہ تعالیٰ آپ کو بہترین اجر عطا فرمائے</p>
+
+</footer>
+
+<script>
+function copyUPI(){
+let upi=document.getElementById("upi").innerText;
+navigator.clipboard.writeText(upi);
+document.getElementById("msg").innerHTML="UPI copied successfully ✔";
+}
+</script>
+
+</body>
+</html>
