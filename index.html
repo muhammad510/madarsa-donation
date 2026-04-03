@@ -11,57 +11,49 @@
 
 body{background:#f5f5f5;color:#333;}
 
-/* HERO */
+/* HERO CAROUSEL */
 .hero{
+position:relative;
 height:60vh;
-background:url("./assets/2.png") center/cover no-repeat;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-padding:20px;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-width:100%;height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.hero-content{position:relative;z-index:2;}
-
-.hero h1{font-size:28px;}
-.tagline{font-size:16px;}
-.urdu{direction:rtl;font-size:18px;}
-
-@media(max-width:600px){
-.hero h1{font-size:22px;}
-.tagline{font-size:14px;}
-}
-
-/* CONTAINER */
-.container{max-width:900px;margin:auto;padding:15px;}
-
-/* CAROUSEL */
-.carousel{
-position:relative;
-margin-top:20px;
 overflow:hidden;
+color:#fff;
 }
 
 .slides{
 display:flex;
+height:100%;
 transition:0.5s;
 }
 
-.slides img{
-width:100%;
-flex-shrink:0;
-border:1px solid #ddd;
+.slide{
+min-width:100%;
+height:100%;
+position:relative;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
 }
+
+.slide::after{
+content:"";
+position:absolute;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+top:0;left:0;
+}
+
+.slide-content{
+position:relative;
+z-index:2;
+}
+
+.slide h1{font-size:28px;margin-bottom:10px;}
+.slide p{margin:5px 0;}
+.urdu{direction:rtl;font-size:18px;}
 
 /* BUTTONS */
 .prev,.next{
@@ -73,10 +65,19 @@ color:#fff;
 border:none;
 padding:8px;
 cursor:pointer;
+z-index:5;
 }
 
 .prev{left:10px;}
 .next{right:10px;}
+
+/* MOBILE */
+@media(max-width:600px){
+.slide h1{font-size:20px;}
+}
+
+/* CONTAINER */
+.container{max-width:900px;margin:auto;padding:15px;}
 
 /* CARD */
 .card{
@@ -84,19 +85,7 @@ background:#fff;
 padding:15px;
 margin-top:15px;
 border:1px solid #ddd;
-font-size:14px;
 }
-
-/* QUOTE */
-.quote{
-background:#fff;
-padding:15px;
-margin-top:15px;
-border-left:4px solid #000;
-text-align:center;
-}
-
-.quote p{margin:5px 0;}
 
 /* PROGRESS */
 .progress-box{
@@ -134,7 +123,6 @@ border:1px solid #ddd;
 
 .qr img{width:160px;}
 
-/* BUTTON */
 .btn{
 margin-top:10px;
 padding:10px;
@@ -160,7 +148,6 @@ margin-top:20px;
 text-align:center;
 padding:15px;
 background:#ddd;
-font-size:14px;
 }
 
 </style>
@@ -168,32 +155,50 @@ font-size:14px;
 
 <body>
 
-<!-- HERO -->
+<!-- HERO CAROUSEL -->
 <section class="hero">
-<div class="hero-content">
-<h1>Support Madarsa Construction</h1>
-<div class="tagline">Help Build Future Through Education</div>
-<div class="urdu">مدرسہ کی تعمیر میں حصہ لیں</div>
-</div>
-</section>
 
-<div class="container">
-
-<!-- CAROUSEL -->
-<div class="carousel">
 <div class="slides" id="slides">
-<img src="./assets/1.jpeg">
-<img src="./assets/2.png">
-<img src="./assets/3.png">
+
+<!-- SLIDE 1 -->
+<div class="slide" style="background-image:url('./assets/1.jpeg')">
+<div class="slide-content">
+<h1>Support Madarsa Construction</h1>
+<p>Help build future through Islamic education</p>
+<p class="urdu">مدرسہ کی تعمیر میں حصہ لیں</p>
+</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" style="background-image:url('./assets/2.png')">
+<div class="slide-content">
+<h1>Seeking Knowledge is Duty</h1>
+<p>इल्म हासिल करना हर मुसलमान पर फर्ज़ है</p>
+<p class="urdu">علم حاصل کرنا ہر مسلمان پر فرض ہے</p>
+</div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" style="background-image:url('./assets/3.png')">
+<div class="slide-content">
+<h1>Build Sadaqah Jariyah</h1>
+<p>Your donation becomes ongoing reward</p>
+<p class="urdu">صدقہ جاریہ بنائیں</p>
+</div>
+</div>
+
 </div>
 
 <button class="prev" onclick="moveSlide(-1)">❮</button>
 <button class="next" onclick="moveSlide(1)">❯</button>
-</div>
+
+</section>
+
+<div class="container">
 
 <!-- MESSAGE -->
 <div class="card">
-<p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge.</p>
+<p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge and values.</p>
 <p><b>Hindi:</b> आपका सहयोग मदरसे के निर्माण में मदद करता है।</p>
 <p class="urdu"><b>اردو:</b> آپ کی مدد سے مدرسہ تعمیر ہوگا۔</p>
 </div>
@@ -201,6 +206,7 @@ font-size:14px;
 <!-- PROGRESS -->
 <div class="progress-box">
 <h2>Donation Progress</h2>
+
 <p>Collected: ₹ <span id="collected">15250</span></p>
 <p>Target: ₹ <span id="target">200000</span></p>
 
@@ -214,6 +220,7 @@ font-size:14px;
 <!-- QR -->
 <div class="qr">
 <h3>Scan & Donate</h3>
+
 <img src="./assets/qr.png">
 
 <p><b>UPI:</b> <span id="upi">6299458508</span></p>
@@ -283,7 +290,7 @@ slides.style.transform="translateX(-"+index*100+"%)";
 }
 
 // AUTO SLIDE
-setInterval(()=>moveSlide(1),3000);
+setInterval(()=>moveSlide(1),4000);
 
 </script>
 
