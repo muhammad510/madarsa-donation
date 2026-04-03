@@ -21,6 +21,7 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:#fff;
+padding:20px;
 }
 
 .hero::after{
@@ -32,25 +33,50 @@ background:rgba(0,0,0,0.6);
 
 .hero-content{position:relative;z-index:2;}
 
-.hero h1{font-size:30px;margin-bottom:10px;}
+.hero h1{font-size:28px;}
 .tagline{font-size:16px;}
 .urdu{direction:rtl;font-size:18px;}
 
-/* CONTAINER */
-.container{max-width:900px;margin:auto;padding:20px;}
-
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
-margin-top:20px;
+@media(max-width:600px){
+.hero h1{font-size:22px;}
+.tagline{font-size:14px;}
 }
 
-.gallery a img{
+/* CONTAINER */
+.container{max-width:900px;margin:auto;padding:15px;}
+
+/* CAROUSEL */
+.carousel{
+position:relative;
+margin-top:20px;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+transition:0.5s;
+}
+
+.slides img{
 width:100%;
+flex-shrink:0;
 border:1px solid #ddd;
 }
+
+/* BUTTONS */
+.prev,.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#000;
+color:#fff;
+border:none;
+padding:8px;
+cursor:pointer;
+}
+
+.prev{left:10px;}
+.next{right:10px;}
 
 /* CARD */
 .card{
@@ -86,12 +112,15 @@ width:100%;
 background:#ddd;
 height:20px;
 margin-top:10px;
+border-radius:10px;
+overflow:hidden;
 }
 
 .progress-bar{
 height:100%;
 width:0%;
-background:#444;
+background:linear-gradient(90deg,#ff4d4d,#b30000);
+transition:0.5s;
 }
 
 /* QR */
@@ -103,14 +132,16 @@ text-align:center;
 border:1px solid #ddd;
 }
 
-.qr img{width:180px;border:1px solid #ddd;}
+.qr img{width:160px;}
 
+/* BUTTON */
 .btn{
 margin-top:10px;
 padding:10px;
 border:1px solid #000;
 background:#fff;
 cursor:pointer;
+width:100%;
 }
 
 .whatsapp{
@@ -123,6 +154,7 @@ color:#000;
 text-align:center;
 }
 
+/* FOOTER */
 footer{
 margin-top:20px;
 text-align:center;
@@ -147,49 +179,28 @@ font-size:14px;
 
 <div class="container">
 
-<!-- GALLERY -->
-<div class="gallery">
-<a href="./assets/1.jpeg" target="_blank"><img src="./assets/1.jpeg"></a>
-<a href="./assets/2.png" target="_blank"><img src="./assets/2.png"></a>
-<a href="./assets/3.png" target="_blank"><img src="./assets/3.png"></a>
+<!-- CAROUSEL -->
+<div class="carousel">
+<div class="slides" id="slides">
+<img src="./assets/1.jpeg">
+<img src="./assets/2.png">
+<img src="./assets/3.png">
+</div>
+
+<button class="prev" onclick="moveSlide(-1)">❮</button>
+<button class="next" onclick="moveSlide(1)">❯</button>
 </div>
 
 <!-- MESSAGE -->
 <div class="card">
-<p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge and values.</p>
-<p><b>Hindi:</b> आपका सहयोग मदरसे के निर्माण में मदद करता है जहाँ बच्चों को दीन की शिक्षा मिलती है।</p>
-<p class="urdu"><b>اردو:</b> آپ کی مدد سے مدرسہ تعمیر ہوگا جہاں بچوں کو دینی تعلیم دی جائے گی۔</p>
-</div>
-
-<!-- QUOTE -->
-<div class="quote">
-
-<p><b>Arabic:</b></p>
-<p>طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
-
-<p><b>English:</b> Seeking knowledge is an obligation upon every Muslim.</p>
-
-<p><b>Hindi:</b> इल्म हासिल करना हर मुसलमान पर फर्ज़ है।</p>
-
-<p class="urdu"><b>Urdu:</b> علم حاصل کرنا ہر مسلمان پر فرض ہے۔</p>
-
-<hr style="margin:10px 0;">
-
-<p><b>Arabic:</b></p>
-<p>مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ</p>
-
-<p><b>English:</b> Whoever follows a path to seek knowledge, Allah will make the path to Jannah easy.</p>
-
-<p><b>Hindi:</b> जो ज्ञान की राह पर चलता है, अल्लाह उसके लिए जन्नत का रास्ता आसान कर देता है।</p>
-
-<p class="urdu"><b>Urdu:</b> جو علم کے راستے پر چلتا ہے، اللہ اس کے لیے جنت کا راستہ آسان کر دیتا ہے۔</p>
-
+<p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge.</p>
+<p><b>Hindi:</b> आपका सहयोग मदरसे के निर्माण में मदद करता है।</p>
+<p class="urdu"><b>اردو:</b> آپ کی مدد سے مدرسہ تعمیر ہوگا۔</p>
 </div>
 
 <!-- PROGRESS -->
 <div class="progress-box">
 <h2>Donation Progress</h2>
-
 <p>Collected: ₹ <span id="collected">15250</span></p>
 <p>Target: ₹ <span id="target">200000</span></p>
 
@@ -200,11 +211,9 @@ font-size:14px;
 <p id="percent"></p>
 </div>
 
-<!-- QR + ADDRESS -->
+<!-- QR -->
 <div class="qr">
-
 <h3>Scan & Donate</h3>
-
 <img src="./assets/qr.png">
 
 <p><b>UPI:</b> <span id="upi">6299458508</span></p>
@@ -216,7 +225,6 @@ font-size:14px;
 <hr style="margin:15px 0;">
 
 <p><b>📍 Address:</b></p>
-
 <p>
 Bhantha, Supaul Bazar,<br>
 Biraul, Darbhanga,<br>
@@ -227,7 +235,7 @@ Bihar – 847203
 
 <!-- SHARE -->
 <a class="whatsapp" id="shareBtn" target="_blank">
-📢 Share & Earn Reward
+📢 Share & Support
 </a>
 
 </div>
@@ -240,7 +248,7 @@ Bihar – 847203
 
 <script>
 
-// COPY UPI
+// COPY
 function copyUPI(){
 let upi=document.getElementById("upi").innerText;
 navigator.clipboard.writeText(upi);
@@ -248,21 +256,34 @@ document.getElementById("msg").innerHTML="Copied ✔";
 }
 
 // PROGRESS
-let collected = 15250;
-let target = 200000;
+let collected=15250;
+let target=200000;
+let percent=Math.floor((collected/target)*100);
 
-let percent = Math.floor((collected/target)*100);
-
-document.getElementById("bar").style.width = percent + "%";
-document.getElementById("percent").innerHTML = percent + "% Completed";
+document.getElementById("bar").style.width=percent+"%";
+document.getElementById("percent").innerHTML=percent+"% Completed";
 
 // SHARE
-let msg = encodeURIComponent(
-"📢 Madarsa Donation\n\nSupport Islamic Education 🤲\n\n" + window.location.href
-);
+let msg=encodeURIComponent("📢 Madarsa Donation\nSupport Islamic Education 🤲\n"+window.location.href);
+document.getElementById("shareBtn").href="https://wa.me/?text="+msg;
 
-document.getElementById("shareBtn").href =
-"https://wa.me/?text=" + msg;
+// CAROUSEL
+let index=0;
+
+function moveSlide(step){
+let slides=document.getElementById("slides");
+let total=slides.children.length;
+
+index+=step;
+
+if(index<0) index=total-1;
+if(index>=total) index=0;
+
+slides.style.transform="translateX(-"+index*100+"%)";
+}
+
+// AUTO SLIDE
+setInterval(()=>moveSlide(1),3000);
 
 </script>
 
