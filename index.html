@@ -3,53 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Madarsa Ittehad -E- Millat, Bhantha</title>
-    <!-- BASIC SEO -->
-<meta name="title" content="Madarsa Ittehad -E- Millat, Bhantha | Donate for Madarsa Bihar">
-<meta name="description" content="Donate to Madarsa Ittehad -E- Millat, Bhantha (Darbhanga, Bihar). Support Islamic education, help build Madarsa, and earn Sadaqah Jariyah. Easy UPI donation available.">
-<meta name="keywords" content="Madarsa Ittehad E Millat Bhantha, Madarsa donation Bihar, donate madarsa Darbhanga, Islamic charity India, sadaqah jariyah donation, madrasa construction fund, Muslim charity Bihar, donate via UPI India">
-<meta name="author" content="Madarsa Ittehad -E- Millat, Bhantha">
-<meta name="robots" content="index, follow">
 
-<!-- MOBILE / VIEW -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Donate to Madarsa Ittehad -E- Millat, Bhantha (Darbhanga, Bihar). Support Islamic education and earn Sadaqah Jariyah."
+    />
+    <meta
+      name="keywords"
+      content="Madarsa donation Bihar, donate madarsa Darbhanga, sadaqah jariyah, Islamic charity India"
+    />
+    <meta name="theme-color" content="#0a5c2f" />
 
-<!-- THEME COLOR -->
-<meta name="theme-color" content="#0a5c2f">
+    <!-- OG -->
+    <meta
+      property="og:title"
+      content="Donate to Madarsa Ittehad -E- Millat 🤲"
+    />
+    <meta
+      property="og:description"
+      content="Support Islamic education and Madarsa construction."
+    />
+    <meta property="og:image" content="./assets/1.jpeg" />
 
-<!-- OPEN GRAPH (WhatsApp / Facebook) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Donate to Madarsa Ittehad -E- Millat, Bhantha 🤲">
-<meta property="og:description" content="Support Madarsa construction and earn Sadaqah Jariyah. Donate now via UPI and help Islamic education grow.">
-<meta property="og:image" content="./assets/1.jpeg">
-<meta property="og:url" content="https://yourdomain.com">
-
-<!-- TWITTER CARD -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Madarsa Donation | Ittehad -E- Millat, Bhantha">
-<meta name="twitter:description" content="Donate for Madarsa construction in Bihar and earn ongoing rewards (Sadaqah Jariyah).">
-<meta name="twitter:image" content="./assets/1.jpeg">
-
-<!-- FAVICON -->
-<link rel="icon" href="./assets/logo.png" type="image/png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NGO",
-  "name": "Madarsa Ittehad -E- Millat, Bhantha",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Biraul",
-    "addressRegion": "Bihar",
-    "postalCode": "847203",
-    "addressCountry": "India"
-  },
-  "url": "https://yourdomain.com",
-  "sameAs": [],
-  "description": "Donate to support Madarsa construction and Islamic education in Bihar. Earn Sadaqah Jariyah.",
-  "areaServed": "India"
-}
-</script>
+    <link rel="icon" href="./assets/logo.png" />
 
     <style>
       * {
@@ -61,20 +40,74 @@
       body {
         background: #f5f5f5;
         color: #333;
+        scroll-behavior: smooth;
       }
 
-      .topbar {
-        background: #000;
+      /* NAVBAR */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #0a5c2f;
         color: #fff;
-        text-align: center;
-        padding: 8px;
+        padding: 10px 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav-left img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .nav-title {
         font-weight: bold;
+        font-size: 15px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 20px;
       }
 
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background: #0a5c2f;
+          padding: 10px;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      /* HERO */
       .hero {
-        position: relative;
         height: 60vh;
         overflow: hidden;
+        position: relative;
         color: #fff;
       }
       .slides {
@@ -84,15 +117,12 @@
       }
       .slide {
         min-width: 100%;
-        height: 100%;
-        position: relative;
         background-size: cover;
         background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 20px;
       }
       .slide::after {
         content: "";
@@ -100,22 +130,14 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.6);
-        top: 0;
-        left: 0;
       }
       .slide-content {
         position: relative;
         z-index: 2;
       }
-      .slide h1 {
-        font-size: 26px;
-        margin-bottom: 8px;
-      }
       .urdu {
         direction: rtl;
-        font-size: 18px;
       }
-
       .prev,
       .next {
         position: absolute;
@@ -134,12 +156,12 @@
         right: 10px;
       }
 
+      /* CONTENT */
       .container {
         max-width: 900px;
         margin: auto;
         padding: 15px;
       }
-
       .card,
       .progress-box,
       .qr {
@@ -150,17 +172,15 @@
       }
 
       .progress {
-        width: 100%;
         background: #ddd;
         height: 20px;
-        margin-top: 10px;
         border-radius: 10px;
         overflow: hidden;
       }
       .progress-bar {
         height: 100%;
         width: 0%;
-        background: linear-gradient(90deg, #ff4d4d, #b30000);
+        background: red;
       }
 
       .qr {
@@ -171,43 +191,166 @@
       }
 
       .btn {
-        margin-top: 10px;
-        padding: 10px;
-        border: 1px solid #000;
-        background: #fff;
-        cursor: pointer;
         width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #000;
+        cursor: pointer;
       }
-
       .btn-dark {
         background: #000;
         color: #fff;
-        text-decoration: none;
-        display: block;
       }
 
       .whatsapp {
         display: block;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #000;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #000;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: #0a5c2f;
+        color: #fff;
+        margin-top: 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 25px 15px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .footer-box h3,
+      .footer-box h4 {
+        margin-bottom: 10px;
+      }
+
+      .footer-box p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer-box a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .footer-box a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-logo {
+        width: 50px;
+        margin-bottom: 10px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        font-size: 13px;
+      }
+
+      /* MAP SECTION */
+      .map-section {
+        background: #fff;
+        padding: 15px;
+        margin: 20px auto;
+        max-width: 900px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      .map-btn {
+        display: inline-block;
         margin-top: 10px;
         padding: 10px;
         border: 1px solid #000;
         text-decoration: none;
         color: #000;
-        text-align: center;
       }
 
-      footer {
-        text-align: center;
-        padding: 15px;
-        background: #ddd;
-        margin-top: 20px;
+      /* WHATSAPP FLOAT */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: #fff;
+        font-size: 22px;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        transition: 0.3s;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+      }
+
+      /* WHATSAPP FLOAT FIX */
+      .whatsapp-join {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: #fff;
+        font-size: 26px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        transition: 0.3s;
+      }
+
+      .whatsapp-join:hover {
+        transform: scale(1.1);
       }
     </style>
   </head>
 
   <body>
-    <div class="topbar">🏫 Madarsa Ittehad -E- Millat, Bhantha</div>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="nav-left">
+        <img src="./assets/logo.png" />
+        <div class="nav-title">Madarsa Ittehad -E- Millat</div>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#donate">Donate</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="slides" id="slides">
         <div
@@ -215,9 +358,9 @@
           style="background-image: url(&quot;./assets/1.jpeg&quot;)"
         >
           <div class="slide-content">
-            <h1>Madarsa Ittehad -E- Millat, Bhantha</h1>
+            <h1>Madarsa Ittehad -E- Millat</h1>
             <p>Support Madarsa Construction</p>
-            <p class="urdu">مدرسہ اتحاد ملت بھنتھا</p>
+            <p class="urdu">مدرسہ اتحاد ملت</p>
           </div>
         </div>
 
@@ -227,17 +370,7 @@
         >
           <div class="slide-content">
             <h1>Seeking Knowledge is Duty</h1>
-            <p class="urdu">علم حاصل کرنا ہر مسلمان پر فرض ہے</p>
-          </div>
-        </div>
-
-        <div
-          class="slide"
-          style="background-image: url(&quot;./assets/3.png&quot;)"
-        >
-          <div class="slide-content">
-            <h1>Build Sadaqah Jariyah</h1>
-            <p class="urdu">صدقہ جاریہ بنائیں</p>
+            <p class="urdu">علم حاصل کرنا فرض ہے</p>
           </div>
         </div>
       </div>
@@ -246,145 +379,113 @@
       <button class="next" onclick="moveSlide(1)">❯</button>
     </section>
 
-    <div class="container">
-      <div class="card">
-        <h3>🏫 Madarsa Ittehad -E- Millat, Bhantha</h3>
-        <p>Your donation helps build Islamic education for children.</p>
-      </div>
-
+    <!-- DONATE -->
+    <div class="container" id="donate">
       <div class="progress-box">
         <h2>Donation Progress</h2>
-        <p>Collected: ₹ <span id="collected">15250</span></p>
-        <p>Target: ₹ <span id="target">200000</span></p>
+        <p>Collected ₹ 15250</p>
+        <p>Target ₹ 200000</p>
         <div class="progress"><div class="progress-bar" id="bar"></div></div>
         <p id="percent"></p>
       </div>
 
-      <!-- 🔥 UPI PAYMENT SECTION -->
       <div class="qr">
-        <h3>💳 Donate via UPI</h3>
-
+        <h3>Donate via UPI</h3>
         <img src="./assets/qr.png" />
 
-        <p><b>UPI ID:</b> 6299458508@upi</p>
-
+        <p><b>UPI:</b> 6299458508@upi</p>
         <button class="btn" onclick="copyUPI()">Copy UPI</button>
 
-        <!-- ENTER AMOUNT -->
         <input
           type="number"
           id="amount"
           placeholder="Enter Amount ₹"
           class="btn"
         />
-
-        <!-- PAY BUTTON -->
         <button class="btn btn-dark" onclick="payNow()">Pay Now</button>
 
         <p id="msg"></p>
-
-        <hr style="margin: 15px 0" />
-
-        <p><b>📍 Address:</b></p>
-        <p>Bhantha, Darbhanga, Bihar</p>
       </div>
 
       <a class="whatsapp" id="shareBtn" target="_blank">📢 Share & Support</a>
     </div>
 
-    <!-- ADD THIS BLOG SECTION just BEFORE footer -->
-
-    <div class="container">
-      <!-- BLOG SECTION -->
+    <!-- ABOUT -->
+    <div class="container" id="about">
       <div class="card">
-        <h2>🏫 About Madarsa Ittehad -E- Millat, Bhantha</h2>
-
-        <p>
-          Madarsa Ittehad -E- Millat, Bhantha (Darbhanga, Bihar) is dedicated to
-          providing Islamic and moral education to underprivileged children.
-          Many families in rural Bihar cannot afford proper education, and
-          madarsas become the only source of learning and guidance.
-        </p>
-
-        <p>
-          Your donation helps build classrooms, provide study materials, and
-          support students in gaining knowledge of the Quran, Hadith, and basic
-          education.
-        </p>
+        <h2>About Madarsa</h2>
+        <p>This Madarsa helps poor children get Islamic education.</p>
       </div>
 
       <div class="card">
-        <h2>📖 Importance of Madarsa Education</h2>
-
-        <ul style="margin-left: 15px">
-          <li>✔ Quran and Islamic teachings</li>
-          <li>✔ Moral and ethical values</li>
-          <li>✔ Discipline and character building</li>
-          <li>✔ Basic modern education</li>
-        </ul>
-
-        <p style="margin-top: 10px">
-          Madarsa education shapes a strong and responsible generation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>🤲 Earn Sadaqah Jariyah</h2>
-
-        <p>
-          Sadaqah Jariyah is ongoing charity that continues to reward you even
-          after your lifetime. By donating to a Madarsa:
-        </p>
-
-        <ul style="margin-left: 15px">
-          <li>📖 Every Quran recited gives reward</li>
-          <li>🕌 Every prayer taught gives reward</li>
-          <li>👨‍🎓 Every student educated gives reward</li>
-        </ul>
-
-        <p style="margin-top: 10px">
-          This is a chance to earn continuous blessings.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>💖 Why Your Donation Matters</h2>
-
-        <p>Your support directly helps:</p>
-
-        <ul style="margin-left: 15px">
-          <li>🏫 Construction of Madarsa building</li>
-          <li>📚 Providing books and materials</li>
-          <li>👶 Supporting poor and orphan children</li>
-          <li>🌱 Building a better future</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>📢 How You Can Help</h2>
-
-        <ul style="margin-left: 15px">
-          <li>💳 Donate via UPI</li>
-          <li>📲 Share this page on WhatsApp</li>
-          <li>👨‍👩‍👧 Tell friends and family</li>
-        </ul>
-
-        <p style="margin-top: 10px">
-          Even sharing this page is a contribution.
-        </p>
+        <h2>Sadaqah Jariyah</h2>
+        <p>Your donation gives continuous reward.</p>
       </div>
     </div>
 
-    <footer>
-      <p><b>Madarsa Ittehad -E- Millat, Bhantha</b></p>
-      <p>May Allah reward you 🤲</p>
+    <div class="map-section">
+      <h3>📍 Our Location</h3>
+
+      <iframe
+        src="https://www.google.com/maps?q=25.9627717598911,86.2626549610608&z=17&output=embed"
+        width="100%"
+        height="250"
+        style="border: 0; border-radius: 10px"
+        loading="lazy"
+      >
+      </iframe>
+
+      <a
+        href="https://www.google.com/maps?q=25.9627717598911,86.2626549610608"
+        target="_blank"
+        class="map-btn"
+      >
+        📍 Open in Google Maps
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <!-- LEFT -->
+        <div class="footer-box">
+          <img src="./assets/logo.png" class="footer-logo" />
+          <h3>Madarsa Ittehad -E- Millat</h3>
+          <p>
+            Bhantha, Biraul, Darbhanga, Bihar – 847203 <br />
+            Supporting Islamic education for children 🤲
+          </p>
+        </div>
+
+        <!-- LINKS -->
+        <div class="footer-box">
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#donate">Donate</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-box">
+          <h4>Contact</h4>
+          <p>📍 Darbhanga, Bihar</p>
+          <p>📞 +91 6299458508</p>
+          <p>💳 UPI: 6299458508@upi</p>
+        </div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Madarsa Ittehad -E- Millat, Bhantha</p>
+        <p>May Allah reward you 🤲 | صدقہ جاریہ</p>
+      </div>
     </footer>
 
     <script>
-      // COPY UPI
-      function copyUPI() {
-        navigator.clipboard.writeText("6299458508@upi");
-        document.getElementById("msg").innerHTML = "Copied ✔";
+      // NAV MENU
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
       }
 
       // PROGRESS
@@ -392,31 +493,28 @@
       document.getElementById("bar").style.width = percent + "%";
       document.getElementById("percent").innerHTML = percent + "% Completed";
 
-      // 🔥 PAY NOW FUNCTION
+      // COPY
+      function copyUPI() {
+        navigator.clipboard.writeText("6299458508@upi");
+        document.getElementById("msg").innerHTML = "Copied ✔";
+      }
+
+      // PAY
       function payNow() {
         let amt = document.getElementById("amount").value;
-
         if (!amt) {
           alert("Enter amount");
           return;
         }
-
-        let upi =
-          "upi://pay?pa=6299458508@upi&pn=Md Islam Nadaf&am=" +
-          amt +
-          "&cu=INR";
-
-        window.location.href = upi;
+        window.location.href =
+          "upi://pay?pa=6299458508@upi&pn=Madarsa&am=" + amt + "&cu=INR";
       }
 
       // SHARE
-      let msg = encodeURIComponent(
-        "Donate to Madarsa Ittehad -E- Millat, Bhantha 🤲 " +
-          window.location.href,
-      );
+      let msg = encodeURIComponent("Donate 🤲 " + window.location.href);
       document.getElementById("shareBtn").href = "https://wa.me/?text=" + msg;
 
-      // CAROUSEL
+      // SLIDER
       let index = 0;
       function moveSlide(step) {
         let slides = document.getElementById("slides");
@@ -428,5 +526,13 @@
       }
       setInterval(() => moveSlide(1), 4000);
     </script>
+
+    <a
+      href="https://chat.whatsapp.com/KmgjXNhHSmS2crjFG4Jyr9"
+      target="_blank"
+      class="btn whatsapp-join"
+    >
+      💬
+    </a>
   </body>
 </html>
