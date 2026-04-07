@@ -3,13 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madarsa Donation</title>
+<title>Madarsa Ittehad -E- Millat, Bhantha</title>
 
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
 body{background:#f5f5f5;color:#333;}
+
+/* TOP BAR */
+.topbar{
+background:#000;
+color:#fff;
+text-align:center;
+padding:8px;
+font-weight:bold;
+}
 
 /* HERO CAROUSEL */
 .hero{
@@ -51,7 +60,7 @@ position:relative;
 z-index:2;
 }
 
-.slide h1{font-size:28px;margin-bottom:10px;}
+.slide h1{font-size:26px;margin-bottom:8px;}
 .slide p{margin:5px 0;}
 .urdu{direction:rtl;font-size:18px;}
 
@@ -155,6 +164,11 @@ background:#ddd;
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+🏫 Madarsa Ittehad -E- Millat, Bhantha
+</div>
+
 <!-- HERO CAROUSEL -->
 <section class="hero">
 
@@ -163,9 +177,9 @@ background:#ddd;
 <!-- SLIDE 1 -->
 <div class="slide" style="background-image:url('./assets/1.jpeg')">
 <div class="slide-content">
-<h1>Support Madarsa Construction</h1>
-<p>Help build future through Islamic education</p>
-<p class="urdu">مدرسہ کی تعمیر میں حصہ لیں</p>
+<h1>Madarsa Ittehad -E- Millat, Bhantha</h1>
+<p>Support Madarsa Construction</p>
+<p class="urdu">مدرسہ اتحاد ملت بھنتھا</p>
 </div>
 </div>
 
@@ -198,6 +212,8 @@ background:#ddd;
 
 <!-- MESSAGE -->
 <div class="card">
+<h3>🏫 Madarsa Ittehad -E- Millat, Bhantha</h3>
+
 <p><b>English:</b> Your donation helps build a Madarsa where children learn Islamic knowledge and values.</p>
 <p><b>Hindi:</b> आपका सहयोग मदरसे के निर्माण में मदद करता है।</p>
 <p class="urdu"><b>اردو:</b> آپ کی مدد سے مدرسہ تعمیر ہوگا۔</p>
@@ -219,6 +235,7 @@ background:#ddd;
 
 <!-- QR -->
 <div class="qr">
+<h3>🏫 Madarsa Ittehad -E- Millat, Bhantha</h3>
 <h3>Scan & Donate</h3>
 
 <img src="./assets/qr.png">
@@ -271,6 +288,7 @@ class="btn">
 </div>
 
 <footer>
+<p><b>Madarsa Ittehad -E- Millat, Bhantha</b></p>
 <p>May Allah reward you 🤲</p>
 <p>अल्लाह आपको इसका बेहतर बदला दे</p>
 <p class="urdu">اللہ آپ کو بہترین اجر عطا فرمائے</p>
@@ -294,7 +312,7 @@ document.getElementById("bar").style.width=percent+"%";
 document.getElementById("percent").innerHTML=percent+"% Completed";
 
 // SHARE
-let msg=encodeURIComponent("📢 Madarsa Donation\nSupport Islamic Education 🤲\n"+window.location.href);
+let msg=encodeURIComponent("📢 Madarsa Ittehad -E- Millat, Bhantha\nSupport Islamic Education 🤲\n"+window.location.href);
 document.getElementById("shareBtn").href="https://wa.me/?text="+msg;
 
 // CAROUSEL
