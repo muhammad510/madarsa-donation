@@ -331,6 +331,56 @@
       .whatsapp-join:hover {
         transform: scale(1.1);
       }
+
+      .team {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* ✅ 4 per row */
+        gap: 15px;
+      }
+
+      .member {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      .member:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .member img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      .member h4 {
+        margin-top: 8px;
+        font-size: 16px;
+      }
+
+      .member p {
+        font-size: 13px;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .team {
+          grid-template-columns: repeat(2, 1fr); /* tablet */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .team {
+          grid-template-columns: repeat(1, 1fr); /* mobile */
+        }
+      }
     </style>
   </head>
 
@@ -491,6 +541,60 @@
       </div>
 
       <a class="whatsapp" id="shareBtn" target="_blank">📢 Share & Support</a>
+    </div>
+
+    <div class="container">
+      <!-- TRUSTEES -->
+      <div class="card">
+        <h3 style="text-align: center">👳 Trustee Members</h3>
+
+        <div class="team">
+          <div class="member">
+            <img src="./assets/imamm_sahab.png" />
+            <h4>Md Zulfekar Chisti</h4>
+          </div>
+
+          <div class="member">
+            <img src="./assets/ibrahim.png" />
+            <h4>Md Ibrahim</h4>
+          </div>
+
+          <div class="member">
+            <img src="./assets/sabir_nadaf.png" />
+            <h4>Md Sabir</h4>
+          </div>
+
+          <div class="member">
+            <img src="./assets/sadrul.png" />
+            <h4>Md Sadrul Haq</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONORS -->
+      <div class="card">
+        <h3 style="text-align: center">🤝 Top Donors</h3>
+
+        <div class="team">
+          <div class="member">
+            <img src="./assets/donor1.jpg" />
+            <h4>Ahmed Khan</h4>
+            <p>₹5000</p>
+          </div>
+
+          <div class="member">
+            <img src="./assets/donor2.jpg" />
+            <h4>Rizwan Ali</h4>
+            <p>₹3000</p>
+          </div>
+
+          <div class="member">
+            <img src="./assets/donor3.jpg" />
+            <h4>Shahid Ansari</h4>
+            <p>₹2000</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="map-section">
